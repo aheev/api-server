@@ -16,7 +16,7 @@ jobs:
       - name: Prebuild - get version
         shell: bash
         run: |
-          VERSION=$(node -e 'fs=require("fs");console.log(JSON.parse(fs.readFileSync("package.json")).dependencies.lbug)')
+          VERSION=$(node -e 'fs=require("fs");console.log(JSON.parse(fs.readFileSync("package.json")).dependencies["@ladybugdb/core"])')
           echo "VERSION=$VERSION" >> $GITHUB_ENV
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
